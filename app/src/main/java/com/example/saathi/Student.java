@@ -8,6 +8,8 @@ public class Student {
     private String studentMajor;
     private String studentBatch;
     private String studentRollNo;
+    private String imageID;
+    private String emailId;
 
     public Student() {
       /*Blank default constructor essential for Firebase*/
@@ -52,7 +54,23 @@ public class Student {
 
     public void setRollNo(String rollNo) {
         this.studentRollNo = rollNo;
-    }    
+    }
+
+    public void setImage(String imageId) {
+        this.imageID = imageId;
+    }
+
+    public String getImage() {
+        return imageID;
+    }
+
+    public void setEmail(String emailID) {
+        this.emailId = emailID;
+    }
+
+    public String getEmailID() {
+        return emailId;
+    }
 
 
 }
