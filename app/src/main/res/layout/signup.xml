@@ -6,71 +6,264 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:animateLayoutChanges="true">
 
-    <EditText
-        android:id="@+id/username"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/password"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="11dp"
-        android:background="@drawable/shape"
-        android:ems="10"
-        android:hint="Email ID"
-        android:inputType="textEmailAddress"
-        android:paddingBottom="5dp"
-        android:paddingTop="5dp"
-        android:textAlignment="center"
-        android:textColorHint="#252120" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:ems="10"
-        android:id="@+id/password"
-        android:textAlignment="center"
-        android:paddingTop="5dp"
-        android:paddingBottom="5dp"
-        android:background="@drawable/shape"
-        android:hint="Password"
-        android:textColorHint="#252120"
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
         android:layout_centerVertical="true"
-        android:layout_alignLeft="@+id/username"
-        android:layout_alignStart="@+id/username" />
+        android:id="@+id/horizontalView"
+        android:visibility="invisible"
+        android:background="#000000"/>
 
-    <android.support.design.widget.FloatingActionButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:clickable="true"
-        app:fabSize="mini"
-        android:src="@drawable/home1"
-        app:backgroundTint="@color/fab"
-        android:id="@+id/singuphome"
-        android:layout_marginLeft="17dp"
-        android:layout_marginStart="17dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="23dp" />
-    <Button
-        android:text="Sign Up"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/password"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:id="@+id/signup"
-        android:background="@drawable/login"
-        android:textColor="#000000"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/horizontalView"
+        android:id="@+id/topHalf">
 
-    <TextView
-        android:id="@+id/intro"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/username"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="48dp"
-        android:textColor="#000000"
-        android:textSize="25dp"
-        android:visibility="visible" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_centerVertical="true"
+            android:id="@+id/topHalfHorizontalView"
+            android:background="#000000"
+            android:visibility="invisible"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/topHalfHorizontalView"
+            android:id="@+id/topQuarterTopHalf">
+            
+
+            <View
+                android:id="@+id/verticalView"
+                android:layout_width="2dp"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                android:background="#000000"
+                android:visibility="invisible"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/leftTopQuarterTopHalf"
+                android:layout_toLeftOf="@+id/verticalView">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="5dp"
+                    android:paddingTop="5dp"
+                    android:id="@+id/textViewName"
+                    android:text="NAME :"/>
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingTop="5dp"
+                    android:id="@+id/name"
+                    android:layout_below="@+id/textViewName"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="5dp"
+                    android:paddingTop="5dp"
+                    android:id="@+id/textViewRollNumber"
+                    android:text="ROLL NUMBER : "
+                    android:layout_below="@+id/name"/>
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingTop="5dp"
+                    android:id="@+id/rollNumber"
+                    android:layout_below="@+id/textViewRollNumber"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/rightTopQuarterTopHalf"
+                android:layout_toRightOf="@+id/verticalView">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/imageDisplay"/>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+        
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/topHalfHorizontalView"
+            android:id="@+id/bottomQuarterTopHalf">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="5dp"
+                android:paddingLeft="5dp"
+                android:id="@+id/textViewUsername"
+                android:text="E-MAIL : "/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/username"
+                android:paddingTop="5dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:inputType="textEmailAddress"
+                android:layout_below="@+id/textViewUsername"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:paddingTop="5dp"
+                android:id="@+id/textViewContactNumber"
+                android:layout_below="@+id/username"
+                android:text="CONTACT NUMBER : "/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingTop="5dp"
+                android:id="@+id/contactNumber"
+                android:layout_below="@+id/textViewContactNumber"
+                android:inputType="number"/>
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/horizontalView"
+        android:id="@+id/bottomHalf">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_centerVertical="true"
+            android:id="@+id/bottomHalfHorizontalView"
+            android:background="#000000"
+            android:visibility="invisible"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/topQuarterBottomHalf"
+            android:layout_above="@+id/bottomHalfHorizontalView">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="5dp"
+                android:paddingLeft="5dp"
+                android:text="MAJOR : "
+                android:id="@+id/textViewMajor"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="5dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:id="@+id/major"
+                android:layout_below="@id/textViewMajor"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:paddingTop="5dp"
+                android:id="@+id/textViewBatch"
+                android:layout_below="@+id/major"
+                android:text="BATCH YEAR : " />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="5dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:id="@+id/batch"
+                android:layout_below="@+id/textViewBatch"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/bottomQuarterBottomHalf"
+            android:layout_below="@+id/bottomHalfHorizontalView">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="5dp"
+                android:paddingLeft="5dp"
+                android:id="@+id/textViewPassword"
+                android:text="PASSWORD : "/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/password"
+                android:inputType="textPassword"
+                android:paddingTop="5dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:layout_below="@+id/textViewPassword"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="UPLOAD IMAGE"
+                android:textSize="10dp"
+                android:layout_below="@+id/password"
+                android:id="@+id/imageUpload"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/signup"
+                android:text="SIGNUP"
+                android:layout_below="@+id/password"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="97dp"
+                android:layout_marginEnd="97dp" />
+
+        </RelativeLayout>
+
+        <android.support.design.widget.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            app:fabSize="mini"
+            android:src="@drawable/home1"
+            app:backgroundTint="@color/fab"
+            android:id="@+id/singuphome"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+    </RelativeLayout>
+
+
+
+
 </RelativeLayout>
+
+
