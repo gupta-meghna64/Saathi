@@ -86,7 +86,7 @@ public class Startup extends AppCompatActivity {
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     if (task.isSuccessful()) {
-                                        Intent intent = new Intent(Startup.this, MainActivity.class);
+                                        Intent intent = new Intent(Startup.this, Main2Activity.class);
                                         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                         startActivity(intent);
