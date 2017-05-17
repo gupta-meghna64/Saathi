@@ -111,7 +111,7 @@ public class Signup extends AppCompatActivity {
                                         student.setMobile(ContactNumber);
                                         student.setEmail(emailEditText.getText().toString().trim());
                                         mDatabase.child("Private User Data").child(mFirebaseAuth.getCurrentUser().getUid()).push().setValue(student);
-                                        Intent intent = new Intent(Signup.this, MainActivity.class);
+                                        Intent intent = new Intent(Signup.this, Main2Activity.class);
                                         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                         startActivity(intent);
