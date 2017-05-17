@@ -50,37 +50,25 @@
                 android:id="@+id/leftTopQuarterTopHalf"
                 android:layout_toLeftOf="@+id/verticalView">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingLeft="5dp"
-                    android:paddingTop="5dp"
-                    android:id="@+id/textViewName"
-                    android:text="NAME :"/>
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingLeft="5dp"
                     android:paddingRight="5dp"
-                    android:paddingTop="5dp"
+                    android:paddingTop="10dp"
                     android:id="@+id/name"
-                    android:layout_below="@+id/textViewName"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingLeft="5dp"
-                    android:paddingTop="5dp"
-                    android:id="@+id/textViewRollNumber"
-                    android:text="ROLL NUMBER : "
-                    android:layout_below="@+id/name"/>
+                    android:hint="Name"/>
+
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingLeft="5dp"
                     android:paddingRight="5dp"
-                    android:paddingTop="5dp"
+                    android:paddingTop="30dp"
                     android:id="@+id/rollNumber"
-                    android:layout_below="@+id/textViewRollNumber"/>
+                    android:hint="Roll Number"
+                    android:layout_below="@+id/name"
+                    />
 
             </RelativeLayout>
 
@@ -105,41 +93,27 @@
             android:layout_below="@+id/topHalfHorizontalView"
             android:id="@+id/bottomQuarterTopHalf">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingTop="5dp"
-                android:paddingLeft="5dp"
-                android:id="@+id/textViewUsername"
-                android:text="E-MAIL : "/>
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/username"
-                android:paddingTop="5dp"
+                android:paddingTop="10dp"
                 android:paddingLeft="5dp"
                 android:paddingRight="5dp"
                 android:inputType="textEmailAddress"
-                android:layout_below="@+id/textViewUsername"/>
+                android:hint="E-mail"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingLeft="5dp"
-                android:paddingTop="5dp"
-                android:id="@+id/textViewContactNumber"
-                android:layout_below="@+id/username"
-                android:text="CONTACT NUMBER : "/>
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingLeft="5dp"
                 android:paddingRight="5dp"
-                android:paddingTop="5dp"
+                android:paddingTop="30dp"
                 android:id="@+id/contactNumber"
-                android:layout_below="@+id/textViewContactNumber"
+                android:hint="Contact Number"
+                android:layout_below="@+id/username"
                 android:inputType="number"/>
 
         </RelativeLayout>
@@ -167,40 +141,26 @@
             android:id="@+id/topQuarterBottomHalf"
             android:layout_above="@+id/bottomHalfHorizontalView">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingTop="5dp"
-                android:paddingLeft="5dp"
-                android:text="MAJOR : "
-                android:id="@+id/textViewMajor"/>
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingTop="5dp"
+                android:paddingTop="10dp"
                 android:paddingLeft="5dp"
                 android:paddingRight="5dp"
                 android:id="@+id/major"
-                android:layout_below="@id/textViewMajor"/>
+                android:hint="Major"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingLeft="5dp"
-                android:paddingTop="5dp"
-                android:id="@+id/textViewBatch"
-                android:layout_below="@+id/major"
-                android:text="BATCH YEAR : " />
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingTop="5dp"
+                android:paddingTop="30dp"
                 android:paddingLeft="5dp"
                 android:paddingRight="5dp"
                 android:id="@+id/batch"
-                android:layout_below="@+id/textViewBatch"/>
+                android:layout_below="@+id/major"
+                android:hint="Batch"/>
 
         </RelativeLayout>
 
@@ -210,23 +170,17 @@
             android:id="@+id/bottomQuarterBottomHalf"
             android:layout_below="@+id/bottomHalfHorizontalView">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingTop="5dp"
-                android:paddingLeft="5dp"
-                android:id="@+id/textViewPassword"
-                android:text="PASSWORD : "/>
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/password"
                 android:inputType="textPassword"
-                android:paddingTop="5dp"
+                android:paddingTop="10dp"
                 android:paddingLeft="5dp"
                 android:paddingRight="5dp"
-                android:layout_below="@+id/textViewPassword"/>
+                android:paddingBottom="25dp"
+                android:hint="Password"/>
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
