@@ -14,9 +14,20 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class RegisterCourses extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+    private FirebaseAuth mFirebaseAuth;
+    private FirebaseUser mFirebaseUser;
+    private DatabaseReference mDatabase;
+    private String mUserId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +35,9 @@ public class RegisterCourses extends AppCompatActivity
         setContentView(R.layout.course_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        mFirebaseAuth = FirebaseAuth.getInstance();
+        mFirebaseUser = mFirebaseAuth.getCurrentUser();
+        mDatabase = FirebaseDatabase.getInstance().getReference();
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -39,11 +53,47 @@ public class RegisterCourses extends AppCompatActivity
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
         toggle.syncState();
-
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-        View headerView=navigationView.getHeaderView(0);
-        TextView userEmail=(TextView) headerView.findViewById(R.id.textView);
+        View headerView = navigationView.getHeaderView(0);
+        final TextView userName = (TextView) headerView.findViewById(R.id.textViewNameDisplay);
+        final TextView userEmail = (TextView) headerView.findViewById(R.id.textViewEmailAddress);
+
+        if (mFirebaseUser == null) {
+            // Not logged in, launch the Log In activity
+            loadLogInView();
+        } else {
+            mUserId = mFirebaseUser.getUid();
+            //userName.setText(mUserId);
+            //a = (TextView) findViewById(R.id.val);
+            mDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    //int k = 0;
+                    for (DataSnapshot d : dataSnapshot.child("Private User Data").child(mUserId).getChildren()) {
+
+                        userName.setText("aa");
+                        userEmail.setText("bb");
+                        Student c = d.getValue(Student.class);
+                        String nameVal = c.getName();
+                        //Log.d("name: ", nameVal);
+                        String emailVal = mFirebaseAuth.getCurrentUser().getEmail();
+                        //Log.d("email id: ", emailVal);
+
+                        userName.setText(nameVal);
+                        userEmail.setText(emailVal);
+                    }
+                }
+
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+
+                }
+            });
+
+        }
+
+
     }
 
     @Override
@@ -106,5 +156,12 @@ public class RegisterCourses extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    private void loadLogInView() {
+        Intent intent = new Intent(this, Startup.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
     }
 }
