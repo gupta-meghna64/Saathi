@@ -13,6 +13,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -39,6 +41,12 @@ public class RegisterCourses extends AppCompatActivity
         mFirebaseUser = mFirebaseAuth.getCurrentUser();
         mDatabase = FirebaseDatabase.getInstance().getReference();
 
+        Button add = (Button) findViewById(R.id.buttonAdd);
+        Button remove = (Button) findViewById(R.id.buttonRemove);
+        final EditText addCourseNumber = (EditText) findViewById(R.id.editTextCourseNumber);
+        final EditText addCourseName = (EditText) findViewById(R.id.editTextCourseName);
+        final EditText addCourseCreadits = (EditText) findViewById(R.id.editTextCredits);
+        final EditText removeNumber = (EditText)findViewById(R.id.editTextRemoveCourseNumber);
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -92,6 +100,71 @@ public class RegisterCourses extends AppCompatActivity
             });
 
         }
+
+        add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String number = addCourseNumber.getText().toString().trim();
+                String name = addCourseName.getText().toString().trim();
+                String cred = addCourseCreadits.getText().toString().trim();
+                Courses ob = new Courses();
+
+                ob.setCourseName(name);
+                ob.setCourseNumber(number);
+                ob.setCredits(cred);
+
+                mDatabase.child("Private User Data").child(mUserId).push().setValue(ob);
+                addCourseName.setText("");
+                addCourseNumber.setText("");
+                addCourseCreadits.setText("");
+            }
+        });
+
+        remove.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mUserId=mFirebaseUser.getUid();
+                mDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        String user_input=removeNumber.getText().toString();
+                        removeNumber.setText("");
+                        //boolean flag=true;
+                        int counter = 0;
+                        for(DataSnapshot d: dataSnapshot.child("Private User Data").child(mUserId).getChildren())
+                        {
+                            if(counter == 0)
+                            {
+                                counter = counter + 1;
+                            }
+                            else {
+
+
+                                Courses c = d.getValue(Courses.class);
+                                String a = c.getCourseNumber();
+
+                                if (a.equals(user_input)) {
+                                    d.getRef().removeValue();
+
+
+                                }
+                                counter = counter + 1;
+
+                            }
+
+
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+
+                    }
+                });
+
+            }
+        });
+
 
 
     }
