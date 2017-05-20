@@ -1,6 +1,7 @@
 package com.example.saathi;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -13,6 +14,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -28,6 +31,8 @@ public class Profile extends AppCompatActivity
     private FirebaseUser mFirebaseUser;
     private DatabaseReference mDatabase;
     private String mUserId;
+    private EditText userFullName, userEmailID, userMobile,userBatch, userMajor,userRollNo;
+    private Button updateUserInfo,saveUserInfo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +43,14 @@ public class Profile extends AppCompatActivity
         mFirebaseAuth = FirebaseAuth.getInstance();
         mFirebaseUser = mFirebaseAuth.getCurrentUser();
         mDatabase = FirebaseDatabase.getInstance().getReference();
+        userFullName=(EditText) findViewById(R.id.personName);
+        userEmailID=(EditText) findViewById(R.id.personEmail);
+        userBatch=(EditText) findViewById(R.id.personBatchYear);
+        userMajor=(EditText) findViewById(R.id.personMajor);
+        userMobile=(EditText) findViewById(R.id.personContact);
+        userRollNo=(EditText) findViewById(R.id.personRollNo);
+        updateUserInfo=(Button) findViewById(R.id.updateUserData);
+        saveUserInfo=(Button) findViewById(R.id.saveUserData);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -60,29 +73,33 @@ public class Profile extends AppCompatActivity
         final TextView userName = (TextView) headerView.findViewById(R.id.textViewNameDisplay);
         final TextView userEmail = (TextView) headerView.findViewById(R.id.textViewEmailAddress);
 
-        if (mFirebaseUser == null) {
-            // Not logged in, launch the Log In activity
-            loadLogInView();
-        } else {
             mUserId = mFirebaseUser.getUid();
-            //userName.setText(mUserId);
-            //a = (TextView) findViewById(R.id.val);
             mDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
-                    //int k = 0;
+                    int k = 0;
                     for (DataSnapshot d : dataSnapshot.child("Private User Data").child(mUserId).getChildren()) {
+                        if(k==0)
+                        {
+                            Student currentStudent = d.getValue(Student.class);
+                            String nameVal = currentStudent.getName();
+                            String emailVal = mFirebaseAuth.getCurrentUser().getEmail();
+                            String batch=currentStudent.getBatch();
+                            String rollNo=currentStudent.getRollNo();
+                            String major=currentStudent.getMajor();
+                            String mobile=currentStudent.getMobile();
+                            userName.setText(nameVal);
+                            userEmail.setText(emailVal);
+                            userFullName.setText(nameVal);
+                            userEmailID.setText(emailVal);
+                            userBatch.setText(batch);
+                            userRollNo.setText(rollNo);
+                            userMajor.setText(major);
+                            userMobile.setText(mobile);
+                            k++;
 
-                        userName.setText("aa");
-                        userEmail.setText("bb");
-                        Student c = d.getValue(Student.class);
-                        String nameVal = c.getName();
-                        //Log.d("name: ", nameVal);
-                        String emailVal = mFirebaseAuth.getCurrentUser().getEmail();
-                        //Log.d("email id: ", emailVal);
+                        }
 
-                        userName.setText(nameVal);
-                        userEmail.setText(emailVal);
                     }
                 }
 
@@ -92,7 +109,39 @@ public class Profile extends AppCompatActivity
                 }
             });
 
-        }
+        updateUserInfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        int k = 0;
+                        for (DataSnapshot d : dataSnapshot.child("Private User Data").child(mUserId).getChildren()) {
+                            if(k==0)
+                            {
+                                String userDetailsKey=d.getKey();
+                                Student updatedStudent=new Student();
+                                updatedStudent.setBatch(userBatch.getText().toString());
+                                updatedStudent.setEmail(userEmailID.getText().toString());
+                                updatedStudent.setMajor(userMajor.getText().toString());
+                                updatedStudent.setMobile(userMobile.getText().toString());
+                                updatedStudent.setName(userFullName.getText().toString());
+                                updatedStudent.setRollNo(userRollNo.getText().toString());
+                                updatedStudent.setImage(d.getValue(Student.class).getImage());
+                                mDatabase.child("Private User Data").child(mUserId).child(userDetailsKey).setValue(updatedStudent);
+                                k++;
+                            }
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+
+                    }
+                });
+            }
+        });
+
 
 
     }
