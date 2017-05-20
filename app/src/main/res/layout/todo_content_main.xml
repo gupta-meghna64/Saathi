@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,11 +8,270 @@
     tools:context="com.example.saathi.ToDo"
     tools:showIn="@layout/todo_bar_main">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="ToDo"
-        tools:layout_editor_absoluteX="162dp"
-        tools:layout_editor_absoluteY="191dp" />
-</android.support.constraint.ConstraintLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:id="@+id/horizontalView"
+        android:layout_centerVertical="true" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="80dp"
+        android:background="#000000"
+        android:id="@+id/toDoHeaderView" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:id="@+id/toDoHeader"
+        android:background="#000000">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TO-DO LIST"
+            android:textColor="#FFFFFF"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:id="@+id/toDoList"/>
+
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toDoHeader"
+        android:id="@+id/toDoListSection">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_centerVertical="true"
+            android:id="@+id/toDoListSectionhorizontalView" />
+
+        <EditText
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:hint=" Add a new task : "
+            android:id="@+id/addTask"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="ADD"
+            android:layout_toRightOf="@id/addTask"
+            android:id="@+id/buttonAddTask"/>
+
+        <EditText
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:hint="Add the task Number : "
+            android:layout_below="@+id/addTask"
+            android:id="@+id/editTextTaskNumber" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:id="@+id/assignment1"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:background="@mipmap/assignment"
+            android:layout_below="@+id/editTextTaskNumber"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:visibility="invisible"
+            android:layout_marginStart="15dp" />
+        
+        <TextView
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/textViewTask1"
+            android:layout_marginLeft="80dp"
+            android:textStyle="bold"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/editTextTaskNumber"/>
+
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/buttonDoneTask1"
+            android:visibility="invisible"
+            android:layout_marginBottom="2dp"
+            android:layout_toRightOf="@id/textViewTask1"
+            android:background="@mipmap/check"
+            android:layout_below="@+id/editTextTaskNumber"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:background="@mipmap/assignment"
+            android:id="@+id/assignment2"
+            android:layout_marginTop="10dp"
+            android:visibility="invisible"
+            android:layout_below="@+id/textViewTask1"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="15dp" />
+
+        <TextView
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/textViewTask2"
+            android:layout_marginLeft="80dp"
+            android:textStyle="bold"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="31dp"
+            android:layout_below="@+id/textViewTask1"/>
+
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/buttonDoneTask2"
+            android:visibility="invisible"
+            android:layout_marginBottom="2dp"
+            android:layout_toRightOf="@id/textViewTask2"
+            android:background="@mipmap/check"
+            android:layout_below="@id/buttonDoneTask1"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:background="@mipmap/assignment"
+            android:id="@+id/assignment3"
+            android:layout_marginTop="10dp"
+            android:visibility="invisible"
+            android:layout_below="@+id/textViewTask2"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="15dp" />
+
+        <TextView
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/textViewTask3"
+            android:layout_marginLeft="80dp"
+            android:textStyle="bold"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="32dp"
+            android:layout_below="@+id/textViewTask2"/>
+
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/buttonDoneTask3"
+            android:visibility="invisible"
+            android:layout_marginBottom="2dp"
+            android:layout_toRightOf="@id/textViewTask3"
+            android:background="@mipmap/check"
+            android:layout_below="@id/buttonDoneTask2"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:background="@mipmap/assignment"
+            android:id="@+id/assignment4"
+            android:layout_marginTop="10dp"
+            android:visibility="invisible"
+            android:layout_below="@+id/textViewTask3"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="15dp" />
+
+        <TextView
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/textViewTask4"
+            android:layout_marginLeft="80dp"
+            android:textStyle="bold"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="33dp"
+            android:layout_below="@+id/textViewTask3"/>
+
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/buttonDoneTask4"
+            android:visibility="invisible"
+            android:layout_marginBottom="2dp"
+            android:layout_toRightOf="@id/textViewTask4"
+            android:background="@mipmap/check"
+            android:layout_below="@id/buttonDoneTask3"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:background="@mipmap/assignment"
+            android:id="@+id/assignment5"
+            android:layout_marginTop="10dp"
+            android:visibility="invisible"
+            android:layout_below="@+id/textViewTask4"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="15dp" />
+
+        <TextView
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/textViewTask5"
+            android:layout_marginLeft="80dp"
+            android:layout_marginRight="20dp"
+            android:textStyle="bold"
+            android:layout_marginTop="33dp"
+            android:layout_below="@+id/textViewTask4"/>
+
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/buttonDoneTask5"
+            android:visibility="invisible"
+            android:layout_marginBottom="2dp"
+            android:layout_toRightOf="@id/textViewTask5"
+            android:background="@mipmap/check"
+            android:layout_below="@id/buttonDoneTask4"/>
+
+        <TextView
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/textViewTask6"
+            android:layout_marginLeft="80dp"
+            android:textStyle="bold"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="33dp"
+            android:layout_below="@+id/textViewTask5"/>
+
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/buttonDoneTask6"
+            android:visibility="invisible"
+            android:layout_marginBottom="2dp"
+            android:layout_toRightOf="@id/textViewTask6"
+            android:background="@mipmap/check"
+            android:layout_below="@id/buttonDoneTask5"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:visibility="invisible"
+            android:background="@mipmap/assignment"
+            android:id="@+id/assignment6"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/textViewTask5"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="15dp" />
+
+    </RelativeLayout>
+
+
+
+</RelativeLayout>
+
