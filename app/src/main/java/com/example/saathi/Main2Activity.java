@@ -1,6 +1,7 @@
 package com.example.saathi;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -14,6 +15,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -39,17 +41,76 @@ public class Main2Activity extends AppCompatActivity
         setContentView(R.layout.activity_main2);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        
+        RelativeLayout courseregister = (RelativeLayout) findViewById(R.id.RelativeLayoutRegisterCourses);
+        RelativeLayout timetable = (RelativeLayout) findViewById(R.id.RelativeLayoutTimeTable);
+        RelativeLayout todo = (RelativeLayout) findViewById(R.id.RelativeLayoutToDo);
+        RelativeLayout profile = (RelativeLayout) findViewById(R.id.RelativeLayoutMyProfile);
+        RelativeLayout friends = (RelativeLayout) findViewById(R.id.RelativeLayoutMyFriends);
+        RelativeLayout contact = (RelativeLayout) findViewById(R.id.RelativeLayoutContactUs);
+
+        courseregister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(Main2Activity.this,RegisterCourses.class);
+                startActivity(intent);
+            }
+        });
+
+        timetable.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(Main2Activity.this,Timetable.class);
+                startActivity(intent);
+            }
+        });
+
+        todo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(Main2Activity.this,ToDo.class);
+                startActivity(intent);
+            }
+        });
+
+        profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(Main2Activity.this,Profile.class);
+                startActivity(intent);
+            }
+        });
+
+        friends.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(Main2Activity.this,Friends.class);
+                startActivity(intent);
+            }
+        });
+
+        contact.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(Main2Activity.this,Contact.class);
+                startActivity(intent);
+            }
+        });
+
 
         mFirebaseAuth = FirebaseAuth.getInstance();
         mFirebaseUser = mFirebaseAuth.getCurrentUser();
         mDatabase = FirebaseDatabase.getInstance().getReference();
+        TextView head = (TextView) findViewById(R.id.textViewHeading);
+        Typeface type = Typeface.createFromAsset(getAssets(),"fonts/Annifont.ttf");
+        head.setTypeface(type);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setImageResource(android.R.drawable.ic_lock_power_off);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                loadLogInView();
             }
         });
 
