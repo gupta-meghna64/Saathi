@@ -4,23 +4,30 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/home"
-            android:title="Home" />
+            android:title="Home"
+            android:icon="@drawable/ic_home"/>
         <item
             android:id="@+id/courseRegister"
-            android:title="Register for courses" />
+            android:title="Register for courses"
+            android:icon="@drawable/ic_register"/>
         <item
             android:id="@+id/timetable"
-            android:title="Timetable" />
+            android:title="Timetable"
+            android:icon="@drawable/ic_time"/>
         <item
             android:id="@+id/toDo"
-            android:title="To-Do List" />
+            android:title="To-Do List"
+            android:icon="@drawable/ic_todo"/>
         <item
             android:id="@+id/profile"
-            android:title="My Profile" />
+            android:title="My Profile"
+            android:icon="@drawable/ic_profile"/>
         <item
             android:id="@+id/friends"
-            android:title="My Friends" />
+            android:title="My Friends"
+            android:icon="@drawable/ic_friends"/>
     </group>
 
 
 </menu>
+
