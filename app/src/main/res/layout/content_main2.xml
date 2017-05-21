@@ -1,18 +1,257 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/blackback"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.saathi.Main2Activity"
     tools:showIn="@layout/app_bar_main2">
 
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Home"
-        tools:layout_editor_absoluteX="148dp"
-        tools:layout_editor_absoluteY="253dp" />
-</android.support.constraint.ConstraintLayout>
+    <View
+        android:id="@+id/homeHeaderView"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="80dp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:id="@+id/homeHeader"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:id="@+id/textViewHeading"
+            android:textColor="#FFFFFF"
+            android:text="Hello Saathi"
+            android:textStyle="bold"
+            android:textSize="30dp"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="70dp"
+        android:layout_height="match_parent"
+        android:id="@+id/visibleSection"
+        android:layout_below="@+id/homeHeader">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_centerVertical="true"
+            android:id="@+id/visibleSectionHorizontalView"
+            android:visibility="invisible" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/visibleSectionHorizontalView"
+            android:id="@+id/topHalfVisibleSection">
+
+            <RelativeLayout
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:id="@+id/RelativeLayoutRegisterCourses"
+                android:layout_marginLeft="20dp"
+                android:text="Hello"
+                android:background="@drawable/circle"
+                android:layout_marginTop="30dp" >
+
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@mipmap/register"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:layout_centerVertical="true"/>
+
+            </RelativeLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="REGISTER COURSES"
+                android:id="@+id/a"
+                android:textColor="#FFFFFF"
+                android:layout_below="@+id/RelativeLayoutRegisterCourses"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"/>
+
+
+
+            <RelativeLayout
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:id="@+id/RelativeLayoutTimeTable"
+                android:layout_toRightOf="@+id/RelativeLayoutRegisterCourses"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/circle"
+                android:layout_marginTop="30dp">
+
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@mipmap/timetable"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="25dp"
+                    android:layout_centerVertical="true"/>
+
+            </RelativeLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TIME-TABLE"
+                android:layout_below="@+id/RelativeLayoutTimeTable"
+                android:layout_toRightOf="@+id/a"
+                android:id="@+id/b"
+                android:textColor="#FFFFFF"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"/>
+
+            <RelativeLayout
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:id="@+id/RelativeLayoutToDo"
+                android:background="@drawable/circle"
+                android:layout_toRightOf="@+id/RelativeLayoutTimeTable"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="30dp">
+
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@mipmap/todo"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="25dp"
+                    android:layout_centerVertical="true"/>
+
+            </RelativeLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="T0-DO"
+                android:layout_below="@+id/RelativeLayoutToDo"
+                android:layout_toRightOf="@+id/b"
+                android:layout_marginTop="10dp"
+                android:textColor="#FFFFFF"
+                android:layout_marginLeft="60dp"/>
+
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/visibleSectionHorizontalView"
+            android:id="@+id/bottomHalfVisibleSection">
+
+            <RelativeLayout
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:id="@+id/RelativeLayoutMyProfile"
+                android:background="@drawable/circle"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="30dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@mipmap/profile"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="25dp"
+                    android:layout_centerVertical="true"/>
+
+            </RelativeLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PROFILE"
+                android:layout_below="@+id/RelativeLayoutMyProfile"
+                android:id="@+id/e"
+                android:textColor="#FFFFFF"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="40dp"/>
+
+            <RelativeLayout
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:id="@+id/RelativeLayoutMyFriends"
+                android:layout_toRightOf="@+id/RelativeLayoutMyProfile"
+                android:background="@drawable/circle"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="30dp">
+
+
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@mipmap/friends"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="25dp"
+                    android:layout_centerVertical="true"/>
+
+            </RelativeLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MY FRIENDS"
+                android:layout_below="@+id/RelativeLayoutMyFriends"
+                android:id="@+id/f"
+                android:textColor="#FFFFFF"
+                android:layout_toRightOf="@+id/e"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="55dp"/>
+
+            <RelativeLayout
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:id="@+id/RelativeLayoutContactUs"
+                android:layout_toRightOf="@+id/RelativeLayoutMyFriends"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/circle"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="30dp">
+
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@mipmap/contact"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="25dp"
+                    android:layout_centerVertical="true"/>
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CONTACT US"
+                android:layout_below="@+id/RelativeLayoutContactUs"
+                android:id="@+id/g"
+                android:textColor="#FFFFFF"
+                android:layout_toRightOf="@+id/f"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="45dp"/>
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+
+</RelativeLayout>
+
