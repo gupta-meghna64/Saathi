@@ -6,21 +6,26 @@ package com.example.saathi;
 
 public class Courses {
 
-    private String courseNumber;
+    private String courseCode;
     private String courseName;
-    private String credits;
+    private String courseCredits;
+    private String courseInstructor;
+    private String courseLocation;
+    private String coursePreReq;
+    private String courseTimeTable;
+
 
     public Courses() {
 
     }
-    public void setCourseNumber(String courseNo)
+    public void setcourseCode(String courseNo)
     {
-        this.courseNumber = courseNo;
+        this.courseCode = courseNo;
     }
 
-    public String getCourseNumber()
+    public String getcourseCode()
     {
-        return courseNumber;
+        return courseCode;
     }
 
     public void setCourseName(String name)
@@ -33,14 +38,33 @@ public class Courses {
         return courseName;
     }
 
-    public void setCredits(String cred)
+    public void setcourseCredits(String cred)
     {
-        this.credits = cred;
+        this.courseCredits = cred;
     }
 
-    public String getCredits()
+    public String getcourseCredits()
     {
-        return credits;
+        return courseCredits;
     }
 
+    public String getCourseTimeTable()
+    {
+        return courseTimeTable;
+    }
+
+    public String getCourseInstructor()
+    {
+        return courseInstructor;
+    }
+
+    public String getCourseLocation()
+    {
+        return courseLocation;
+    }
+
+    public String getCoursePreReq()
+    {
+        return coursePreReq;
+    }
 }
