@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@drawable/lightback"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.saathi.RegisterCourses"
@@ -12,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="2dp"
         android:layout_centerVertical="true"
-        android:background="#000000"
+        android:visibility="invisible"
         android:id="@+id/courseHorizontalView" />
 
     <RelativeLayout
@@ -25,19 +26,19 @@
             android:layout_width="match_parent"
             android:layout_height="2dp"
             android:layout_marginTop="80dp"
+            android:visibility="invisible"
             android:background="#000000"
             android:id="@+id/courseHeaderView" />
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="80dp"
-            android:id="@+id/courseHeader"
-            android:background="#000000">
+            android:id="@+id/courseHeader">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="ADD COURSES"
-                android:textColor="#FFFFFF"
+                android:textColor="#000000"
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
                 android:textSize="25dp"
@@ -52,6 +53,8 @@
             android:layout_below="@+id/courseHeader"
             android:paddingTop="10dp"
             android:paddingLeft="10dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
             android:paddingRight="10dp"
             android:hint="Enter Course Number : "
             android:id="@+id/editTextCourseNumber"/>
@@ -63,6 +66,8 @@
             android:paddingTop="10dp"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
             android:hint="Enter Course Name : "
             android:id="@+id/editTextCourseName"/>
 
@@ -73,6 +78,8 @@
             android:paddingTop="10dp"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
             android:hint="Enter Course Credits : "
             android:id="@+id/editTextCredits"/>
 
@@ -94,6 +101,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/courseTopBottom"
+        android:layout_marginTop="10dp"
         android:layout_below="@+id/courseHorizontalView">
 
         <View
@@ -101,13 +109,13 @@
             android:layout_height="2dp"
             android:layout_marginTop="80dp"
             android:background="#000000"
+            android:visibility="invisible"
             android:id="@+id/courseFooterView" />
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="80dp"
             android:id="@+id/removeCourseHeader"
-            android:background="#000000"
             >
 
             <TextView
@@ -115,7 +123,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/removeCourses"
                 android:text="DROP COURSES"
-                android:textColor="#FFFFFF"
+                android:textColor="#000000"
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
                 android:textSize="25dp"
@@ -130,6 +138,8 @@
             android:paddingTop="20dp"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
             android:hint="Enter Course Number : "
             android:id="@+id/editTextRemoveCourseNumber"/>
 
@@ -140,7 +150,6 @@
             android:layout_below="@+id/editTextRemoveCourseNumber"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_marginTop="20dp"
             android:textSize="10dp"
             android:layout_marginLeft="135dp"
             android:layout_marginStart="135dp"
