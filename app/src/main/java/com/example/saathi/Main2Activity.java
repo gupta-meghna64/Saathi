@@ -72,24 +72,19 @@ public class Main2Activity extends AppCompatActivity
             loadLogInView();
         } else {
             mUserId = mFirebaseUser.getUid();
-            //userName.setText(mUserId);
-            //a = (TextView) findViewById(R.id.val);
             mDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
-                    //int k = 0;
+                    int k=0;
                     for (DataSnapshot d : dataSnapshot.child("Private User Data").child(mUserId).getChildren()) {
-
-                        userName.setText("aa");
-                        userEmail.setText("bb");
-                        Student c = d.getValue(Student.class);
-                        String nameVal = c.getName();
-                        //Log.d("name: ", nameVal);
-                        String emailVal = mFirebaseAuth.getCurrentUser().getEmail();
-                        //Log.d("email id: ", emailVal);
-
-                        userName.setText(nameVal);
-                        userEmail.setText(emailVal);
+                        if(k==0)
+                        {
+                            Student c = d.getValue(Student.class);
+                            String nameVal = c.getName();
+                            String emailVal = mFirebaseAuth.getCurrentUser().getEmail();
+                            userName.setText(nameVal);
+                            userEmail.setText(emailVal);
+                        }
                     }
                 }
 
@@ -98,9 +93,7 @@ public class Main2Activity extends AppCompatActivity
 
                 }
             });
-
-        }
-    }
+        }    }
 
     @Override
     public void onBackPressed() {
