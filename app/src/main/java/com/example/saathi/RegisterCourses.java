@@ -110,8 +110,8 @@ public class RegisterCourses extends AppCompatActivity
                 Courses ob = new Courses();
 
                 ob.setCourseName(name);
-                ob.setCourseNumber(number);
-                ob.setCredits(cred);
+                ob.setcourseCode(number);
+                ob.setcourseCredits(cred);
 
                 mDatabase.child("Private User Data").child(mUserId).push().setValue(ob);
                 addCourseName.setText("");
@@ -141,7 +141,7 @@ public class RegisterCourses extends AppCompatActivity
 
 
                                 Courses c = d.getValue(Courses.class);
-                                String a = c.getCourseNumber();
+                                String a = c.getcourseCode();
 
                                 if (a.equals(user_input)) {
                                     d.getRef().removeValue();
