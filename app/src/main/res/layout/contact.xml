@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="#000000"
+        android:id="@+id/contactHeaderView">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CONTACT US"
+            android:textColor="#FFFFFF"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/contactHeaderView"
+        android:id="@+id/contactVisibleSection">
+
+        <View
+            android:layout_width="1dp"
+            android:visibility="invisible"
+            android:layout_height="match_parent"
+            android:id="@+id/contactVerticalView"
+            android:layout_centerHorizontal="true" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toLeftOf="@+id/contactVerticalView"
+            android:background="#009991"
+            android:id="@+id/leftSection">
+
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/door"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#009991"
+            android:layout_toRightOf="@+id/contactVerticalView"
+            android:id="@+id/rightSection">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="150dp"
+                android:textStyle="bold"
+                android:id="@+id/emailText"
+                android:textSize="20dp"
+                android:text="EMAIL-ID : "
+                android:textColor="#FFFFFF"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="saatvik16261@iiitd.ac.in"
+                android:textColor="#FFFFFF"
+                android:textSize="15dp"
+                android:layout_marginTop="20dp"
+                android:id="@+id/emailSaatvik"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/emailText"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="meghna16056@iiitd.ac.in"
+                android:textColor="#FFFFFF"
+                android:textSize="15dp"
+                android:layout_marginTop="20dp"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/emailMeghna"
+                android:layout_below="@+id/emailSaatvik"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="COPYRIGHT &#169; 2017"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/emailMeghna"
+                android:layout_marginTop="40dp"/>
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+</RelativeLayout>
