@@ -22,10 +22,6 @@
             android:id="@+id/profile"
             android:title="My Profile"
             android:icon="@drawable/ic_profile"/>
-        <item
-            android:id="@+id/friends"
-            android:title="My Friends"
-            android:icon="@drawable/ic_friends"/>
     </group>
 
 
