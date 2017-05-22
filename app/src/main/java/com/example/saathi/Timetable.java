@@ -403,9 +403,6 @@ public class Timetable extends AppCompatActivity
         } else if (id == R.id.profile) {
             Intent intent=new Intent(Timetable.this,Profile.class);
             startActivity(intent);
-        } else if (id == R.id.friends) {
-            Intent intent=new Intent(Timetable.this,Friends.class);
-            startActivity(intent);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
