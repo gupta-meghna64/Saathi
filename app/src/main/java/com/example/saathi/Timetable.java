@@ -85,11 +85,12 @@ public class Timetable extends AppCompatActivity
         greeting=(TextView) findViewById(R.id.timetableGreeting);
         dayClassCounter=(TextView) findViewById(R.id.timetableClasses);
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setImageResource(android.R.drawable.ic_lock_power_off);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                mFirebaseAuth.signOut();
+                loadLogInView();
             }
         });
 
