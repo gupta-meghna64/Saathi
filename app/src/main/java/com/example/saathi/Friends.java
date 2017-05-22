@@ -150,8 +150,6 @@ public class Friends extends AppCompatActivity
             Intent intent=new Intent(Friends.this,Profile.class);
             startActivity(intent);
 
-        } else if (id == R.id.friends) {
-
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
