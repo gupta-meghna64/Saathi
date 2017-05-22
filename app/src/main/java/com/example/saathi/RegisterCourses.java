@@ -216,11 +216,7 @@ public class RegisterCourses extends AppCompatActivity
         } else if (id == R.id.profile) {
             Intent intent=new Intent(RegisterCourses.this,Profile.class);
             startActivity(intent);
-        } else if (id == R.id.friends) {
-            Intent intent=new Intent(RegisterCourses.this,Friends.class);
-            startActivity(intent);
         }
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
