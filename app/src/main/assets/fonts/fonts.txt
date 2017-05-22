@@ -1,0 +1,2 @@
+List of fonts used-
+	1) Annifont (ttf file added)
