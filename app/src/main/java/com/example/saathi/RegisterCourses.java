@@ -48,11 +48,12 @@ public class RegisterCourses extends AppCompatActivity
         final EditText addCourseCreadits = (EditText) findViewById(R.id.editTextCredits);
         final EditText removeNumber = (EditText)findViewById(R.id.editTextRemoveCourseNumber);
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setImageResource(android.R.drawable.ic_lock_power_off);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                mFirebaseAuth.signOut();
+                loadLogInView();
             }
         });
 
