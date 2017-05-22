@@ -198,9 +198,6 @@ public class Profile extends AppCompatActivity
             startActivity(intent);
         } else if (id == R.id.profile) {
 
-        } else if (id == R.id.friends) {
-            Intent intent=new Intent(Profile.this,Friends.class);
-            startActivity(intent);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
