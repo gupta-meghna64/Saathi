@@ -35,7 +35,7 @@ It's very easy to use Saathi on your mobile phones. Just follow these steps -
 ### Screenshots of Saathi
 <p align="center">
 <p>Sign-up Page </p>
-<img src="https://github.com/saatvikj/Saathi/blob/master/app/src/main/res/drawable/Screenshot_2017-05-22-09-46-38-287_com.example.saathi.png" width="150" height="250"/>
+<img src="https://github.com/saatvikj/Saathi/blob/master/app/src/main/res/drawable/ss2.png" width="150" height="250"/>
 
 <br>
 <br>
@@ -65,5 +65,4 @@ It's very easy to use Saathi on your mobile phones. Just follow these steps -
 <br>
 <p> Time-Table </p>
 <img src="https://github.com/saatvikj/Saathi/blob/master/app/src/main/res/drawable/ss8.png" width="150" height="250"/>
-Time-Table
 </p>
