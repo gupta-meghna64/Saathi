@@ -214,10 +214,6 @@ public class Main2Activity extends AppCompatActivity
             Intent intent=new Intent(Main2Activity.this,Profile.class);
             startActivity(intent);
 
-        } else if (id == R.id.friends) {
-            Intent intent=new Intent(Main2Activity.this,Friends.class);
-            startActivity(intent);
-
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
