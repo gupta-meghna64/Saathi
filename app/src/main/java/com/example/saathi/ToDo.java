@@ -478,9 +478,6 @@ public class ToDo extends AppCompatActivity
         } else if (id == R.id.profile) {
             Intent intent=new Intent(ToDo.this,Profile.class);
             startActivity(intent);
-        } else if (id == R.id.friends) {
-            Intent intent=new Intent(ToDo.this,Friends.class);
-            startActivity(intent);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
