@@ -31,3 +31,39 @@ It's very easy to use Saathi on your mobile phones. Just follow these steps -
 * Now browse into the directory where you extracted the zip folder and click on the Saathi.
 * Here you go.
 <p align="center"> <img src="https://github.com/saatvikj/Saathi/blob/master/app/src/main/res/drawable/github.PNG"> </p>
+
+### Screenshots of Saathi
+<p align="center">
+<p>Sign-up Page </p>
+<img src="https://github.com/saatvikj/Saathi/blob/master/app/src/main/res/drawable/Screenshot_2017-05-22-09-46-38-287_com.example.saathi.png" width="150" height="250"/>
+
+<br>
+<br>
+<p>Login Page</p>
+<img src="https://github.com/saatvikj/Saathi/blob/master/app/src/main/res/drawable/ss1.png" width="150" height="250"/>
+<br>
+<br>
+<p>Home Page </p>
+<img src="https://github.com/saatvikj/Saathi/blob/master/app/src/main/res/drawable/ss3.png" width="150" height="250"/>
+<br>
+<br>
+<p>My Profile page</p>
+<img src="https://github.com/saatvikj/Saathi/blob/master/app/src/main/res/drawable/ss9.png" width="150" height="250"/>
+<br>
+<br>
+<p>Contact Us</p>
+<img src="https://github.com/saatvikj/Saathi/blob/master/app/src/main/res/drawable/ss4.png" width="150" height="250"/>
+<br>
+<br>
+<p>Course Registration</p>
+<img src="https://github.com/saatvikj/Saathi/blob/master/app/src/main/res/drawable/ss5.png" width="150" height="250"/>
+<br>
+<br>
+<p>To-Do List</p>
+<img src="https://github.com/saatvikj/Saathi/blob/master/app/src/main/res/drawable/ss6.png" width="150" height="250"/>
+<br>
+<br>
+<p> Time-Table </p>
+<img src="https://github.com/saatvikj/Saathi/blob/master/app/src/main/res/drawable/ss8.png" width="150" height="250"/>
+Time-Table
+</p>
